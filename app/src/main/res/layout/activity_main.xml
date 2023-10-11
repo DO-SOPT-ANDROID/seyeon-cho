@@ -4,15 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginVertical="80dp"
+    android:layout_marginHorizontal="80dp"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintDimensionRatio="1"
+        android:src="@drawable/myimage"
+        tools:ignore="MissingConstraints" />
+
     <TextView
+        android:id="@+id/id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello DO SOPT!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="ID"
+        android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:id="@+id/mypageTextId"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/id"
+        app:layout_constraintStart_toStartOf="@id/id"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/major"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="전공"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/mypageTextId" />
+
+    <TextView
+        android:id="@+id/mypageTextMajor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/major"
+        app:layout_constraintTop_toBottomOf="@id/major" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="닉네임"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginTop="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mypageTextMajor" />
+    <TextView
+        android:id="@+id/mypageTextName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
