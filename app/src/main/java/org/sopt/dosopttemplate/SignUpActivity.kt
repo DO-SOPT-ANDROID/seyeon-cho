@@ -37,7 +37,7 @@ class SignUpActivity : AppCompatActivity() {
                 setResult(RESULT_OK, loginIntent)
                 finish()
             } else {
-                Toast.makeText(this, "회원가입 조건을 다시 확인하세요!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "회원가입 조건을 다시 확인하세요 !", Toast.LENGTH_SHORT).show()
             }
         }
     }

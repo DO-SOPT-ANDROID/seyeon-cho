@@ -23,7 +23,6 @@ class LoginActivity : AppCompatActivity() {
         val signButton = binding.signupButton
         val loginButton = binding.loginButton
 
-
         resultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { result ->
