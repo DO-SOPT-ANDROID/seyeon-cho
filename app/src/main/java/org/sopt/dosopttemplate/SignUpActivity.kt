@@ -3,10 +3,8 @@ package org.sopt.dosopttemplate
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import org.sopt.dosopttemplate.LoginActivity
 import org.sopt.dosopttemplate.databinding.ActivitySignupBinding
 
 class SignUpActivity : AppCompatActivity() {
@@ -31,17 +29,16 @@ class SignUpActivity : AppCompatActivity() {
             val enteredName = editTextName.text.toString()
 
             if (isValidSignUp(enteredId, enteredPassword, enteredMajor, enteredName)) {
-                val loginIntent = Intent(this, LoginActivity::class.java)
+                val loginIntent = Intent()
                 loginIntent.putExtra("entered_id", enteredId)
                 loginIntent.putExtra("entered_password", enteredPassword)
                 loginIntent.putExtra("entered_Major", enteredMajor)
                 loginIntent.putExtra("entered_Name", enteredName)
-
-                startActivity(loginIntent)
+                setResult(RESULT_OK, loginIntent)
+                finish()
             } else {
                 Toast.makeText(this, "회원가입 조건을 다시 확인하세요!", Toast.LENGTH_SHORT).show()
             }
-
         }
     }
 
@@ -58,4 +55,5 @@ class SignUpActivity : AppCompatActivity() {
         val isMajorValid = enteredMajor.length >= 1 && !enteredMajor.isBlank()
 
         return isIdValid && isPasswordValid && isNicknameValid && isMajorValid
-    }}
+    }
+}
