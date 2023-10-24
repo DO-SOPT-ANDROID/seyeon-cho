@@ -51,7 +51,7 @@ class LoginActivity : AppCompatActivity() {
                 if (isLoginSuccessful) {
                     Toast.makeText(this, "로그인에 성공했습니다 :)", Toast.LENGTH_LONG).show()
 
-                    val mainIntent = Intent(this, MainActivity::class.java)
+                    val mainIntent = Intent(this, HomeActivity::class.java)
                     mainIntent.putExtra("user_id", enteredId)
                     mainIntent.putExtra("user_major", enteredMajor)
                     mainIntent.putExtra("user_name", enteredName)

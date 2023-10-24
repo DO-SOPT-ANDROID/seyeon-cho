@@ -17,7 +17,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/id"
+        android:id="@+id/myId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ID"
@@ -31,13 +31,13 @@
         android:layout_width="0dp"
         android:id="@+id/mypageTextId"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/id"
-        app:layout_constraintStart_toStartOf="@id/id"
+        app:layout_constraintTop_toBottomOf="@id/myId"
+        app:layout_constraintStart_toStartOf="@id/myId"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/major"
+        android:id="@+id/myMajor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -53,11 +53,11 @@
         android:layout_height="wrap_content"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/major"
-        app:layout_constraintTop_toBottomOf="@id/major" />
+        app:layout_constraintStart_toStartOf="@id/myMajor"
+        app:layout_constraintTop_toBottomOf="@id/myMajor" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/myName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="닉네임"
@@ -70,8 +70,8 @@
         android:id="@+id/mypageTextName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/name"
-        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/myName"
+        app:layout_constraintStart_toStartOf="@id/myName"
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="20dp" />
 
