@@ -5,15 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="60dp"
-    android:paddingVertical="60dp"
-    tools:context=".MainActivity">
+    android:paddingVertical="60dp">
 
     <ImageView
         android:id="@+id/image"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintDimensionRatio="1"
-        android:src="@drawable/myimage"
+        android:src="@drawable/boong1"
         tools:ignore="MissingConstraints" />
 
     <TextView

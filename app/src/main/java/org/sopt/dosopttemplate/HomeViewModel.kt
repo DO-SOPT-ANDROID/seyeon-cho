@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 class HomeViewModel : ViewModel() {
     val mockUserProfileLists = mutableListOf<UserProfile>(
         UserProfile.My (
-        profileImage = R.drawable.myimage,
+        profileImage = R.drawable.boong1,
         name = "조세연",
         message = "붕어의 계절티비",
     ),
@@ -17,12 +17,12 @@ class HomeViewModel : ViewModel() {
         UserProfile.User(
             profileImage = R.drawable.myimage,
             name = "박강희",
-            message = "하이티비"
+            message = "오늘 생일티비!"
         ),
         UserProfile.User(
             profileImage = R.drawable.myimage,
             name = "이삭",
-            message = "티비티비"
+            message = "안드짱티비"
         ),
         UserProfile.User(
             profileImage = R.drawable.myimage,
@@ -31,23 +31,23 @@ class HomeViewModel : ViewModel() {
         ),
         UserProfile.User(
             profileImage = R.drawable.myimage,
-            name = "컴네",
-            message = "시험티비"
+            name = "붕어빵",
+            message = "슈크림근본"
         ),
         UserProfile.User(
             profileImage = R.drawable.myimage,
-            name = "컴특",
-            message = "드래곤티비"
+            name = "붕어",
+            message = "예?"
         ),
         UserProfile.User(
             profileImage = R.drawable.myimage,
-            name = "데베설",
-            message = "심 티비"
+            name = "붕",
+            message = "붕붕아"
         ),
         UserProfile.User(
             profileImage = R.drawable.myimage,
-            name = "디논",
-            message = "주균 티비"
+            name = "시험",
+            message = "멈춰티비"
         ),
         UserProfile.User(
             profileImage = R.drawable.myimage,
@@ -56,8 +56,8 @@ class HomeViewModel : ViewModel() {
         ),
         UserProfile.User(
             profileImage = R.drawable.myimage,
-            name = "소웨",
-            message = "컴과티비"
+            name = "새벽",
+            message = "배고픔티비"
         ),
         UserProfile.User(
             profileImage = R.drawable.myimage,

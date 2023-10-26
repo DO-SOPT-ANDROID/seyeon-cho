@@ -6,12 +6,12 @@
 
     <ImageView
         android:id="@+id/iv_profile"
-        android:layout_width="50dp"
+        android:layout_width="60dp"
         android:layout_height="0dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/myimage"
+        android:src="@drawable/boong1"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -20,9 +20,9 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:text="조세연"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/iv_profile"
         app:layout_constraintStart_toEndOf="@id/iv_profile"
@@ -33,10 +33,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
+        android:layout_marginStart="16dp"
         android:maxLines="1"
         android:text="붕어의 계절"
-        app:layout_constraintBottom_toBottomOf="@id/iv_profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/iv_profile" />
+        app:layout_constraintStart_toEndOf="@id/iv_profile"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
