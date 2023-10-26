@@ -1,6 +1,7 @@
 package org.sopt.dosopttemplate
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -45,7 +46,6 @@ class LoginActivity : AppCompatActivity() {
             val inputId = binding.inputTextId
             val inputPw = binding.inputTextPw
 
-
                 val isLoginSuccessful =
                     enteredId == inputId.text.toString() && enteredPassword == inputPw.text.toString()
                 if (isLoginSuccessful) {
@@ -54,7 +54,6 @@ class LoginActivity : AppCompatActivity() {
                     val mainIntent = Intent(this, HomeActivity::class.java)
                     mainIntent.putExtra("user_id", enteredId)
                     mainIntent.putExtra("user_major", enteredMajor)
-                    mainIntent.putExtra("user_name", enteredName)
                     startActivity(mainIntent)
                 } else {
                     Toast.makeText(this, "로그인에 실패했습니다 :(", Toast.LENGTH_LONG).show()

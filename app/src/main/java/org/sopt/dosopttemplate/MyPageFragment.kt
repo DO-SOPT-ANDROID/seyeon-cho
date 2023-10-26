@@ -1,17 +1,17 @@
 package org.sopt.dosopttemplate
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import org.sopt.dosopttemplate.databinding.FragmentMyPageBinding
 
-
 class MyPageFragment : Fragment() {
-    private var _binding : FragmentMyPageBinding ? = null
+    private var _binding: FragmentMyPageBinding? = null
     private val binding: FragmentMyPageBinding
-        get() = requireNotNull(_binding){"바인딩 에러"}
+        get() = requireNotNull(_binding) { "바인딩 에러" }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,14 +25,9 @@ class MyPageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val userId = arguments?.getString("user_id")
-        val major = arguments?.getString("user_major")
-        val name = arguments?.getString("user_name")
-
         with(binding) {
-            myId.text = userId
-            myMajor.text = major
-            myName.text = name
+            mypageTextId.text = arguments?.getString("user_id")
+            mypageTextMajor.text = arguments?.getString("user_major")
         }
     }
 
@@ -40,6 +35,15 @@ class MyPageFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    companion object {
+        fun newInstance(id: String, major: String): MyPageFragment {
+            val fragment = MyPageFragment()
+            val args = Bundle()
+            args.putString("user_id", id)
+            args.putString("user_major", major)
+            fragment.arguments = args
+            return fragment
+        }
+    }
 }
-
-
