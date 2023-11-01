@@ -37,6 +37,7 @@ class MyPageFragment : Fragment() {
     }
 
     companion object {
+        @JvmStatic
         fun newInstance(id: String, major: String): MyPageFragment {
             val fragment = MyPageFragment()
             val args = Bundle()
