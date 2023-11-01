@@ -11,6 +11,6 @@
         android:textSize="30dp"
         android:gravity="center"
         android:textStyle="bold"
-        android:text="do_android" />
+        android:text="@string/do_android_title" />
 
 </FrameLayout>
