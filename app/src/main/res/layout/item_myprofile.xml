@@ -24,7 +24,6 @@
         android:text="조세연"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:fontFamily="@font/Pretendard_Regular"
         app:layout_constraintBottom_toBottomOf="@id/iv_profile"
         app:layout_constraintStart_toEndOf="@id/iv_profile"
         app:layout_constraintTop_toTopOf="@id/iv_profile" />
@@ -37,7 +36,6 @@
         android:layout_marginStart="16dp"
         android:maxLines="1"
         android:text="붕어의 계절"
-        android:fontFamily="@font/Pretendard_Regular"
         app:layout_constraintStart_toEndOf="@id/iv_profile"
         app:layout_constraintTop_toBottomOf="@id/tv_name"
         app:layout_constraintEnd_toEndOf="parent"/>

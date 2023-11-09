@@ -26,6 +26,7 @@
         android:layout_marginEnd="24dp"
         android:src="@drawable/ic_fab_share_pink_24"
         app:fabSize="mini"
+        app:tint="#C2185B"
         app:layout_constraintBottom_toBottomOf="@+id/fab_main"
         app:layout_constraintEnd_toEndOf="@+id/fab_main"
         app:layout_constraintStart_toStartOf="@+id/fab_main"
@@ -39,6 +40,7 @@
         android:layout_marginEnd="24dp"
         android:src="@drawable/ic_fab_capture_pink_24"
         app:fabSize="mini"
+        app:tint="#C2185B"
         app:layout_constraintBottom_toBottomOf="@+id/fab_main"
         app:layout_constraintEnd_toEndOf="@+id/fab_main"
         app:layout_constraintStart_toStartOf="@+id/fab_main"
@@ -51,8 +53,10 @@
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="96dp"
         android:src="@drawable/ic_fab_main_pink_24"
+        app:tint="#C2185B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bnv_home"
