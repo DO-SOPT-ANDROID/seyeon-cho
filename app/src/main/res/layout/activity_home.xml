@@ -59,6 +59,8 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/menu_home"/>
+        app:menu="@menu/menu_home"
+        app:itemIconTint="@drawable/menu_selector_color"
+        app:itemTextColor="@drawable/menu_selector_color"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
