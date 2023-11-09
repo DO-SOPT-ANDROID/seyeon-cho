@@ -11,12 +11,12 @@
     <item
         android:id="@+id/menu_home"
         android:icon="@drawable/ic_home_pink_24"
-        android:title="홈" />
+        android:title="HOME" />
 
     <!-- MyPage -->
     <item
         android:id="@+id/menu_mypage"
         android:icon="@drawable/ic_person_pink_24"
-        android:title="마이페이지" />
+        android:title="MY PAGE" />
 
 </menu>
