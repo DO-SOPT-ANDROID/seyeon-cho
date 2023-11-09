@@ -10,6 +10,7 @@ import org.sopt.dosopttemplate.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
+    private var openFAB = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -22,6 +23,7 @@ class HomeActivity : AppCompatActivity() {
                 .commit()
         }
         clickBottomNavigation()
+        setCLICKFAB()
     }
 
     companion object {
@@ -73,7 +75,6 @@ class HomeActivity : AppCompatActivity() {
 
     private fun setCLICKFAB(){
         binding.fabMain.setOnClickListener {
-            Toast.makeText(this, "열리는 중", Toast.LENGTH_SHORT).show()
             eventFAB()
         }
         binding.fabCapture.setOnClickListener {
@@ -86,7 +87,6 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun eventFAB(){
-        var openFAB = false
         if (openFAB){
             ObjectAnimator.ofFloat(binding.fabShare, "translationY", 0f).apply { start() }
             ObjectAnimator.ofFloat(binding.fabCapture, "translationY", 0f).apply { start() }
@@ -94,6 +94,7 @@ class HomeActivity : AppCompatActivity() {
             ObjectAnimator.ofFloat(binding.fabShare, "translationY", -400f).apply { start() }
             ObjectAnimator.ofFloat(binding.fabCapture, "translationY", -200f).apply { start() }
         }
+        openFAB = !openFAB
     }
 }
 
