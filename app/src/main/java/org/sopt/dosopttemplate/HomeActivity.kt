@@ -1,6 +1,8 @@
 package org.sopt.dosopttemplate
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -68,5 +70,31 @@ class HomeActivity : AppCompatActivity() {
             .commit()
 
     }
+
+    private fun setCLICKFAB(){
+        binding.fabMain.setOnClickListener {
+            Toast.makeText(this, "열리는 중", Toast.LENGTH_SHORT).show()
+            eventFAB()
+        }
+        binding.fabCapture.setOnClickListener {
+            Toast.makeText(this, "캡쳐하는 중", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.fabShare.setOnClickListener {
+            Toast.makeText(this, "공유하는 중", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun eventFAB(){
+        var openFAB = false
+        if (openFAB){
+            ObjectAnimator.ofFloat(binding.fabShare, "translationY", 0f).apply { start() }
+            ObjectAnimator.ofFloat(binding.fabCapture, "translationY", 0f).apply { start() }
+        } else {
+            ObjectAnimator.ofFloat(binding.fabShare, "translationY", -400f).apply { start() }
+            ObjectAnimator.ofFloat(binding.fabCapture, "translationY", -200f).apply { start() }
+        }
+    }
 }
+
 
