@@ -5,43 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="60dp"
-    android:paddingVertical="60dp"
-    tools:context=".MainActivity">
+    android:paddingVertical="60dp">
 
     <ImageView
         android:id="@+id/image"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintDimensionRatio="1"
-        android:src="@drawable/myimage"
+        android:src="@drawable/boong1"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/id"
+        android:id="@+id/myId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ID"
+        android:text="@string/id_title"
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image"
+        app:layout_constraintTop_toBottomOf="@id/image"
         android:layout_marginTop="40dp"/>
 
     <TextView
         android:layout_width="0dp"
         android:id="@+id/mypageTextId"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/id"
-        app:layout_constraintStart_toStartOf="@id/id"
+        app:layout_constraintTop_toBottomOf="@id/myId"
+        app:layout_constraintStart_toStartOf="@id/myId"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/major"
+        android:id="@+id/myMajor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="전공"
+        android:text="@string/major_title"
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,27 +52,7 @@
         android:layout_height="wrap_content"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/major"
-        app:layout_constraintTop_toBottomOf="@id/major" />
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="닉네임"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_marginTop="80dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/mypageTextMajor" />
-    <TextView
-        android:id="@+id/mypageTextName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/name"
-        app:layout_constraintStart_toStartOf="@id/name"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="20dp" />
-
+        app:layout_constraintStart_toStartOf="@id/myMajor"
+        app:layout_constraintTop_toBottomOf="@id/myMajor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">DoSoptTemplate</string>
+    <string name="welcome_title">Welcome to SOPT</string>
+    <string name="id_title">ID</string>
+    <string name="pw_title">비밀번호</string>
+    <string name="major_title">전공</string>
+    <string name="nickname_title">닉네임</string>
+    <string name="do_android_title">DO ANDROID</string>
+    <string name="signup_title">SIGN UP</string>
+    <string name="btn_signup">회원가입 하기</string>
+    <string name="btn_login">로그인 하기</string>
+
+
+
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
