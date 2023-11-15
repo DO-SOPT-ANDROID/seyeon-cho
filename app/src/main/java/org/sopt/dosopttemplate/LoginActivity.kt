@@ -6,10 +6,16 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import org.sopt.dosopttemplate.data.RequestLoginDto
+import org.sopt.dosopttemplate.data.ResponseLoginDto
+import org.sopt.dosopttemplate.data.ServicePool
 import org.sopt.dosopttemplate.databinding.ActivityLoginBinding
+import retrofit2.Call
+import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var authService: AuthService
     lateinit var enteredId: String
     lateinit var enteredPassword: String
     lateinit var enteredMajor: String
@@ -43,22 +49,34 @@ class LoginActivity : AppCompatActivity() {
 
         loginButton.setOnClickListener {
 
-            val inputId = binding.inputTextId
-            val inputPw = binding.inputTextPw
+            val id = binding.inputTextId.text.toString()
+            val password = binding.inputTextPw.text.toString()
 
-                val isLoginSuccessful =
-                    enteredId == inputId.text.toString() && enteredPassword == inputPw.text.toString()
-                if (isLoginSuccessful) {
-                    Toast.makeText(this, "로그인에 성공했습니다 :)", Toast.LENGTH_LONG).show()
+            ServicePool.authService.login(RequestLoginDto(id, password))
+                .enqueue(object : retrofit2.Callback<ResponseLoginDto> {
+                    override fun onResponse(
+                        call: Call<ResponseLoginDto>,
+                        response: Response<ResponseLoginDto>,
+                    ) {
+                        if (response.isSuccessful) {
+                            val data: ResponseLoginDto = response.body()!!
+                            val userId = data.id
+                            Toast.makeText(
+                                this@LoginActivity,
+                                "로그인 성공, 유저의 ID $userId ",
+                                Toast.LENGTH_SHORT,
+                            ).show()
 
-                    val mainIntent = Intent(this, HomeActivity::class.java)
-                    mainIntent.putExtra("user_id", enteredId)
-                    mainIntent.putExtra("user_major", enteredMajor)
-                    startActivity(mainIntent)
-                } else {
-                    Toast.makeText(this, "로그인에 실패했습니다 :(", Toast.LENGTH_LONG).show()
-                }
-            }
+                            val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                            startActivity(intent)
+                        }
+                    }
+
+                    override fun onFailure(call: Call<ResponseLoginDto>, t: Throwable) {
+                        Toast.makeText(this@LoginActivity, "서버 에러 발생", Toast.LENGTH_SHORT).show()
+                    }
+                })
         }
     }
+}
 
