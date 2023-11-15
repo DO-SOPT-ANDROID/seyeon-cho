@@ -1,6 +1,5 @@
 package org.sopt.dosopttemplate.data.signup
 
-import android.provider.ContactsContract.CommonDataKinds.Nickname
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
