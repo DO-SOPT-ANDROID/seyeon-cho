@@ -1,4 +1,4 @@
-package org.sopt.dosopttemplate.data
+package org.sopt.dosopttemplate.data.api
 
 import android.util.Log
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
@@ -7,12 +7,12 @@ import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.sopt.dosopttemplate.AuthService
 import org.sopt.dosopttemplate.BuildConfig
 import retrofit2.Retrofit
 
 object ApiFactory {
-    private const val BASE_URL = BuildConfig.AUTH_BASE_URL
+    const val AUTH_BASE_URL = BuildConfig.AUTH_BASE_URL
+    const val USER_BASE_URL = BuildConfig.USER_BASE_URL
 
     private fun getLogOkHttpClient(): Interceptor {
         val loggingInterceptor = HttpLoggingInterceptor { message ->
@@ -22,22 +22,23 @@ object ApiFactory {
         return loggingInterceptor
     }
 
-    private val okHttpClient = OkHttpClient.Builder()
+    val okHttpClient = OkHttpClient.Builder()
         .addInterceptor(getLogOkHttpClient())
         .build()
 
-
-    val retrofit: Retrofit by lazy{
-        Retrofit.Builder()
-            .baseUrl(BASE_URL)
+    inline fun <reified T> create(baseUrl: String): T {
+        val retrofit = Retrofit.Builder()
+            .baseUrl(baseUrl)
             .client(okHttpClient)
             .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
             .build()
+
+        return retrofit.create(T::class.java)
     }
-
-    inline fun <reified T> create(): T = retrofit.create<T>(T::class.java)
 }
 
-    object ServicePool {
-        val authService = ApiFactory.create<AuthService>()
+object ServicePool {
+    val authService = ApiFactory.create<AuthService>(ApiFactory.AUTH_BASE_URL)
+    val userService = ApiFactory.create<UserService>(ApiFactory.USER_BASE_URL)
 }
+

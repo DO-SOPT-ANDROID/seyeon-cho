@@ -1,7 +1,9 @@
-package org.sopt.dosopttemplate
+package org.sopt.dosopttemplate.data.user
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import org.sopt.dosopttemplate.data.user.ResponceUserSupport
+import org.sopt.dosopttemplate.data.user.ResponseUserData
 
 @Serializable
 data class ResponseUserDto(
@@ -16,4 +18,5 @@ data class ResponseUserDto(
     @SerialName("data")
     val data: List<ResponseUserData> = emptyList(),
     @SerialName("support")
-    val support: ResponceUserSupport = ResponceUserSupport())
+    val support: ResponceUserSupport = ResponceUserSupport()
+)

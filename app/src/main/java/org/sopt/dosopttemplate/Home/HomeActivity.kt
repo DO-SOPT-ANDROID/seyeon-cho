@@ -1,4 +1,4 @@
-package org.sopt.dosopttemplate
+package org.sopt.dosopttemplate.Home
 
 import android.animation.ObjectAnimator
 import android.content.pm.PackageManager
@@ -6,8 +6,6 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.os.Bundle
 import android.os.Environment
-import android.provider.MediaStore
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +17,10 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import android.Manifest
+import org.sopt.dosopttemplate.DoAndroid.DoAndroidFragment
+import org.sopt.dosopttemplate.mypage.MyPageFragment
+import org.sopt.dosopttemplate.R
+import org.sopt.dosopttemplate.user.UserFragment
 
 
 class HomeActivity : AppCompatActivity() {
@@ -55,7 +57,7 @@ class HomeActivity : AppCompatActivity() {
         binding.bnvHome.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.menu_home -> {
-                    replaceFragment(HomeFragment())
+                    replaceFragment(UserFragment())
                     true
                 }
 

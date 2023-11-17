@@ -1,16 +1,14 @@
 package org.sopt.dosopttemplate.data.api
 
+import org.sopt.dosopttemplate.data.user.ResponseUserDto
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Query
 
-/*interface UserService {
-    @GET("api/users")
-    fun getUserList(
-        @Query("page") page: Int
-    ): Call<ResponseSignupDto>
+interface UserService {
+    @GET("api/users?page=2")
+    fun getUserList(): Call<ResponseUserDto>
 
-}*/
+}
 
 
 

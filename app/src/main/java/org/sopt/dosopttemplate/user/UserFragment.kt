@@ -1,4 +1,4 @@
-package org.sopt.dosopttemplate
+package org.sopt.dosopttemplate.user
 
 import androidx.fragment.app.Fragment
 import android.os.Bundle
@@ -6,7 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import org.sopt.dosopttemplate.data.signup.ServicePool
+import org.sopt.dosopttemplate.data.api.ServicePool
+import org.sopt.dosopttemplate.data.user.ResponseUserDto
 import org.sopt.dosopttemplate.databinding.FragmentUserBinding
 import retrofit2.Call
 import retrofit2.Callback

@@ -1,7 +1,8 @@
-package org.sopt.dosopttemplate
+package org.sopt.dosopttemplate.user
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import org.sopt.dosopttemplate.data.user.ResponseUserData
 import org.sopt.dosopttemplate.databinding.ItemUserBinding
 
 

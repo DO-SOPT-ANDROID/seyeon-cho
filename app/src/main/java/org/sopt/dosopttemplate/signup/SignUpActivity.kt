@@ -1,10 +1,10 @@
-package org.sopt.dosopttemplate
+package org.sopt.dosopttemplate.signup
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import org.sopt.dosopttemplate.data.ServicePool
+import org.sopt.dosopttemplate.data.api.ServicePool
 import org.sopt.dosopttemplate.data.signup.RequestSignupDto
 import org.sopt.dosopttemplate.databinding.ActivitySignupBinding
 import retrofit2.Call

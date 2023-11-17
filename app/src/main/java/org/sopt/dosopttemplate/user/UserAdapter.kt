@@ -1,8 +1,9 @@
-package org.sopt.dosopttemplate
+package org.sopt.dosopttemplate.user
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import org.sopt.dosopttemplate.data.user.ResponseUserData
 import org.sopt.dosopttemplate.databinding.ItemUserBinding
 
 class UserAdapter : RecyclerView.Adapter<UserViewHolder>() {

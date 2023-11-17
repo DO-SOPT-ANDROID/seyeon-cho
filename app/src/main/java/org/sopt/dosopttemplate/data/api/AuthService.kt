@@ -1,7 +1,7 @@
-package org.sopt.dosopttemplate
+package org.sopt.dosopttemplate.data.api
 
-import org.sopt.dosopttemplate.data.RequestLoginDto
-import org.sopt.dosopttemplate.data.ResponseLoginDto
+import org.sopt.dosopttemplate.data.login.RequestLoginDto
+import org.sopt.dosopttemplate.data.login.ResponseLoginDto
 import org.sopt.dosopttemplate.data.signup.RequestSignupDto
 import retrofit2.Call
 import retrofit2.http.Body
