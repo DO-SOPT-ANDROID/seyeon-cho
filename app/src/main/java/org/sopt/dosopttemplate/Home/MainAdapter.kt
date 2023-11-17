@@ -1,17 +1,19 @@
+package org.sopt.dosopttemplate.Home
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import org.sopt.dosopttemplate.FriendViewHolder
-import org.sopt.dosopttemplate.MyProfileViewHolder
-import org.sopt.dosopttemplate.UserProfile
+import org.sopt.dosopttemplate.Home.friend.FriendViewHolder
+import org.sopt.dosopttemplate.Home.myprofile.MyProfileViewHolder
+import org.sopt.dosopttemplate.Home.friend.RealUserProfile
 import org.sopt.dosopttemplate.databinding.ItemFriendBinding
 import org.sopt.dosopttemplate.databinding.ItemMyprofileBinding
 
 class MainAdapter(requireContext: Context) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    lateinit var profileList: MutableList<UserProfile>
+    lateinit var profileList: MutableList<RealUserProfile>
 
     private val View_Myprofile = 0
     private val View_Friend = 1
@@ -34,10 +36,10 @@ class MainAdapter(requireContext: Context) :
         val item = profileList[position]
         when (holder) {
             is MyProfileViewHolder -> {
-                holder.onBind(item as UserProfile.My )
+                holder.onBind(item as RealUserProfile.My )
             }
             is FriendViewHolder -> {
-                holder.onBind(item as UserProfile.User)
+                holder.onBind(item as RealUserProfile.RealUser)
             }
         }
     }
@@ -47,8 +49,8 @@ class MainAdapter(requireContext: Context) :
     }
 
     override fun getItemViewType(position: Int): Int = when(profileList[position]){
-        is UserProfile.My -> View_Myprofile
-        is UserProfile.User -> View_Friend
+        is RealUserProfile.My -> View_Myprofile
+        is RealUserProfile.RealUser -> View_Friend
     }
 }
 
