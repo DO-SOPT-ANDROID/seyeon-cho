@@ -9,15 +9,9 @@ import android.os.Environment
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import org.sopt.dosopttemplate.databinding.ActivityHomeBinding
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
-import android.Manifest
 import org.sopt.dosopttemplate.DoAndroid.DoAndroidFragment
+import org.sopt.dosopttemplate.databinding.ActivityHomeBinding
 import org.sopt.dosopttemplate.mypage.MyPageFragment
 import org.sopt.dosopttemplate.R
 import org.sopt.dosopttemplate.user.UserFragment
@@ -40,7 +34,7 @@ class HomeActivity : AppCompatActivity() {
         }
         clickBottomNavigation()
         setCLICKFAB()
-        checkManageExternalStoragePermission()
+        //checkManageExternalStoragePermission()
     }
 
     companion object {
@@ -95,7 +89,7 @@ class HomeActivity : AppCompatActivity() {
             eventFAB()
         }
         binding.fabCapture.setOnClickListener {
-            takeScreenshot()
+            //takeScreenshot()
         }
 
         binding.fabShare.setOnClickListener {
@@ -114,7 +108,7 @@ class HomeActivity : AppCompatActivity() {
         openFAB = !openFAB
     }
 
-    private fun checkManageExternalStoragePermission() {
+    /*private fun checkManageExternalStoragePermission() {
         val managePermission = ContextCompat.checkSelfPermission(
             this,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -171,6 +165,6 @@ class HomeActivity : AppCompatActivity() {
         }
 
         return file
-    }
+    }*/
 }
 
