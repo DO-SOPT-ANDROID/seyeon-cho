@@ -20,22 +20,22 @@ class SignUpActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         binding.signupViewModel = signupViewModel
 
-        signup()
+        clicksignbtn()
         observeSignupResult()
+        //observeSignupValid()
     }
 
-
-    private fun signup(){
+    private fun clicksignbtn() {
         binding.signupButton.setOnClickListener {
-            val enteredId = binding.editTextId.text.toString()
-            val enteredPassword = binding.editTextPassword.text.toString()
-            val enteredMajor = binding.editTextMajor.text.toString()
-            val enteredName = binding.editTextName.text.toString()
+            val id = binding.editTextId.text.toString()
+            val password = binding.editTextPassword.text.toString()
+            val major = binding.editTextMajor.text.toString()
+            val name = binding.editTextName.text.toString()
 
-            if (isValidSignUp(enteredId, enteredPassword, enteredMajor, enteredName)) {
-                signupViewModel.signup(enteredId, enteredPassword, enteredMajor, enteredName)
-            }
-        }}
+            signupViewModel.signup(id, password, major, name)
+        }
+    }
+
     private fun observeSignupResult() {
         signupViewModel.signupSuccess.observe(this) {
             if (it) {
@@ -47,18 +47,5 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
     }
-
-    private fun isValidID(id: String): Boolean =
-        Regex("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,10}$").matches(id)
-
-    private fun isValidPassword(password: String): Boolean =
-        Regex("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[!@#\$%^&*()-_=+\\\\|\\[{\\]};:'\",<.>/?]).{6,12}$").matches(password)
-
-    private fun isValidSignUp(
-        enteredId: String,
-        enteredPassword: String,
-        enteredMajor: String,
-        enteredName: String
-    ): Boolean =
-        isValidID(enteredId) && isValidPassword(enteredPassword) && enteredName.isNotBlank() && enteredMajor.isNotBlank()}
+}
 
