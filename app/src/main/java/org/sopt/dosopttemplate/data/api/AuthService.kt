@@ -12,7 +12,6 @@ interface AuthService {
     fun signup(
         @Body request: RequestSignupDto,
     ): Call<Unit>
-
     @POST("api/v1/members/sign-in")
     fun login(
         @Body request: RequestLoginDto,

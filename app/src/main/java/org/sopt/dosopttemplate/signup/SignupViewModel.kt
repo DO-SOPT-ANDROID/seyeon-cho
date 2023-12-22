@@ -41,10 +41,10 @@ class SignupViewModel : ViewModel() {
                 }
             })
     }
-    companion object {
-        private const val ID_REGEX = "^(?=.*[a-zA-Z])(?=.*\\d)[a-zA-Z\\d]{6,10}\$"
-        private const val PW_REGEX = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[^\\w\\s])[a-zA-Z\\d\\S]{6,12}\$"
-        val ID_PATTERN: Pattern = Pattern.compile(ID_REGEX)
-        val PW_PATTERN: Pattern = Pattern.compile(PW_REGEX)
-    }
+//    companion object {
+//        private const val ID_REGEX = "^(?=.*[a-zA-Z])(?=.*\\d)[a-zA-Z\\d]{6,10}\$"
+//        private const val PW_REGEX = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[^\\w\\s])[a-zA-Z\\d\\S]{6,12}\$"
+//        val ID_PATTERN: Pattern = Pattern.compile(ID_REGEX)
+//        val PW_PATTERN: Pattern = Pattern.compile(PW_REGEX)
+//    }
 }
