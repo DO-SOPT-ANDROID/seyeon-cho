@@ -1,4 +1,4 @@
-package org.sopt.dosopttemplate.Home
+package org.sopt.dosopttemplate.presentation.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

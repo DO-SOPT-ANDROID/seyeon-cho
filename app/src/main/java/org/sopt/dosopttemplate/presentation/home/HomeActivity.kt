@@ -1,20 +1,15 @@
-package org.sopt.dosopttemplate.Home
+package org.sopt.dosopttemplate.presentation.home
 
 import android.animation.ObjectAnimator
-import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.graphics.Canvas
 import android.os.Bundle
-import android.os.Environment
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import org.sopt.dosopttemplate.DoAndroid.DoAndroidFragment
-import org.sopt.dosopttemplate.databinding.ActivityHomeBinding
-import org.sopt.dosopttemplate.mypage.MyPageFragment
+import org.sopt.dosopttemplate.presentation.doandroid.DoAndroidFragment
+import org.sopt.dosopttemplate.presentation.mypage.MyPageFragment
 import org.sopt.dosopttemplate.R
-import org.sopt.dosopttemplate.user.UserFragment
+import org.sopt.dosopttemplate.databinding.ActivityHomeBinding
+import org.sopt.dosopttemplate.presentation.user.UserFragment
 
 
 class HomeActivity : AppCompatActivity() {

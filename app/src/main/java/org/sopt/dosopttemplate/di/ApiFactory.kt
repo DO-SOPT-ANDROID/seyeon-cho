@@ -1,4 +1,4 @@
-package org.sopt.dosopttemplate.data.api
+package org.sopt.dosopttemplate.di
 
 import android.util.Log
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
@@ -7,7 +7,9 @@ import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.sopt.dosopttemplate.data.service.AuthService
 import org.sopt.dosopttemplate.BuildConfig
+import org.sopt.dosopttemplate.data.service.UserService
 import retrofit2.Retrofit
 
 object ApiFactory {
@@ -39,6 +41,6 @@ object ApiFactory {
 
 object ServicePool {
     val authService = ApiFactory.create<AuthService>(ApiFactory.AUTH_BASE_URL)
-    val userService = ApiFactory.create<UserService>(ApiFactory.USER_BASE_URL)
+    //val userService = ApiFactory.create<UserService>(ApiFactory.USER_BASE_URL)
 }
 

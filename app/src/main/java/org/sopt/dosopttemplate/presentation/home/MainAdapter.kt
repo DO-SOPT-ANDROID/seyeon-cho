@@ -1,14 +1,14 @@
-package org.sopt.dosopttemplate.Home
+package org.sopt.dosopttemplate.presentation.home
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import org.sopt.dosopttemplate.Home.friend.FriendViewHolder
-import org.sopt.dosopttemplate.Home.myprofile.MyProfileViewHolder
-import org.sopt.dosopttemplate.Home.friend.RealUserProfile
+import org.sopt.dosopttemplate.presentation.home.FriendViewHolder
 import org.sopt.dosopttemplate.databinding.ItemFriendBinding
 import org.sopt.dosopttemplate.databinding.ItemMyprofileBinding
+import org.sopt.dosopttemplate.presentation.home.MyProfileViewHolder
+import org.sopt.dosopttemplate.presentation.home.RealUserProfile
 
 class MainAdapter(requireContext: Context) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {

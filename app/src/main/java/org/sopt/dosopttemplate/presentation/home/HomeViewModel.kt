@@ -1,8 +1,7 @@
-package org.sopt.dosopttemplate.Home
+package org.sopt.dosopttemplate.presentation.home
 
 import androidx.lifecycle.ViewModel
 import org.sopt.dosopttemplate.R
-import org.sopt.dosopttemplate.Home.friend.RealUserProfile
 
 class HomeViewModel : ViewModel() {
     val mockRealUserProfileLists = mutableListOf<RealUserProfile>(

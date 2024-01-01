@@ -6,7 +6,7 @@
     <data>
         <variable
             name="LoginViewModel"
-            type="org.sopt.dosopttemplate.login.LoginViewModel" />
+            type="org.sopt.dosopttemplate.presentation.login.LoginViewModel" />
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,7 +14,7 @@
     android:layout_height="match_parent"
     android:paddingHorizontal="60dp"
     android:paddingVertical="60dp"
-    tools:context=".login.LoginActivity">
+    tools:context=".presentation.login.LoginActivity">
 
     <TextView
         android:id="@+id/welcome"

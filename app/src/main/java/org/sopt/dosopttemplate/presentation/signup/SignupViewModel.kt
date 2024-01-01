@@ -1,14 +1,12 @@
-package org.sopt.dosopttemplate.signup
+package org.sopt.dosopttemplate.presentation.signup
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.map
-import org.sopt.dosopttemplate.data.api.ServicePool
-import org.sopt.dosopttemplate.data.signup.RequestSignupDto
+import org.sopt.dosopttemplate.data.model.request.RequestSignupDto
+import org.sopt.dosopttemplate.di.ServicePool
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.regex.Pattern
 
 class SignupViewModel : ViewModel() {
     private val _signupSuccess: MutableLiveData<Boolean> = MutableLiveData()

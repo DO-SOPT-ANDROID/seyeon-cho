@@ -1,4 +1,4 @@
-package org.sopt.dosopttemplate.mypage
+package org.sopt.dosopttemplate.presentation.mypage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

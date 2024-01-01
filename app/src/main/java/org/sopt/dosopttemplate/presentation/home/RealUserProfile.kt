@@ -1,4 +1,4 @@
-package org.sopt.dosopttemplate.Home.friend
+package org.sopt.dosopttemplate.presentation.home
 import androidx.annotation.DrawableRes
 
 sealed class RealUserProfile {

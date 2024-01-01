@@ -1,4 +1,4 @@
-package org.sopt.dosopttemplate.login
+package org.sopt.dosopttemplate.presentation.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +7,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
-import org.sopt.dosopttemplate.Home.HomeActivity
-import org.sopt.dosopttemplate.signup.SignUpActivity
+import org.sopt.dosopttemplate.presentation.home.HomeActivity
 import org.sopt.dosopttemplate.databinding.ActivityLoginBinding
+import org.sopt.dosopttemplate.presentation.signup.SignUpActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -49,18 +49,18 @@ class LoginActivity : AppCompatActivity() {
 
     private fun observeLoginResult() {
         lifecycleScope.launch {
-            loginViewModel.loginState.collect { loginState ->
+            loginViewModel.uiState.collect { loginState ->
                 when (loginState) {
-                    is LoginState.Success -> {
+                    is UiState.Success -> {
                         Toast.makeText(this@LoginActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
                     }
 
-                    is LoginState.Error -> {
+                    is UiState.Error -> {
                         Toast.makeText(this@LoginActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
                     }
 
-                    is LoginState.Loading -> {
+                    is UiState.Loading -> {
                         Toast.makeText(this@LoginActivity, "로그인 중", Toast.LENGTH_SHORT).show()
                     }
                 }
