@@ -1,6 +1,5 @@
-package org.sopt.dosopttemplate
+package org.sopt.dosopttemplate.presentation.home
 
-import MainAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -29,7 +28,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val MainAdapter = MainAdapter(requireContext())
         binding.rvFriends.adapter = MainAdapter
-        MainAdapter.profileList = viewModel.mockUserProfileLists
+        MainAdapter.profileList = viewModel.mockRealUserProfileLists
     }
 
     override fun onDestroyView() {

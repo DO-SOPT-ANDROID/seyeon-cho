@@ -1,4 +1,4 @@
-package org.sopt.dosopttemplate
+package org.sopt.dosopttemplate.presentation.home
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -7,13 +7,14 @@ import org.sopt.dosopttemplate.databinding.ItemFriendBinding
 class FriendViewHolder(private val binding: ItemFriendBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun onBind(userUserProfileData: UserProfile.User) {
+    fun onBind(RealUserData: RealUserProfile.RealUser) {
         with(binding) {
             Glide.with(ivProfile)
-                .load(userUserProfileData.profileImage)
+                .load(RealUserData.profileImage)
                 .into(ivProfile)
-            tvName.text = userUserProfileData.name
-            tvSelfMessage.text = userUserProfileData.message
+            tvName.text = RealUserData.name
+            tvSelfMessage.text = RealUserData.message
         }
     }
     }
+

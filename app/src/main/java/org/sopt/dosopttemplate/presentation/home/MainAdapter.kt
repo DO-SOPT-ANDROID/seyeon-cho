@@ -1,20 +1,24 @@
+package org.sopt.dosopttemplate.presentation.home
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import org.sopt.dosopttemplate.FriendViewHolder
-import org.sopt.dosopttemplate.MyProfileViewHolder
-import org.sopt.dosopttemplate.UserProfile
+import org.sopt.dosopttemplate.presentation.home.FriendViewHolder
 import org.sopt.dosopttemplate.databinding.ItemFriendBinding
 import org.sopt.dosopttemplate.databinding.ItemMyprofileBinding
+import org.sopt.dosopttemplate.presentation.home.MyProfileViewHolder
+import org.sopt.dosopttemplate.presentation.home.RealUserProfile
 
 class MainAdapter(requireContext: Context) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    lateinit var profileList: MutableList<UserProfile>
+    lateinit var profileList: MutableList<RealUserProfile>
 
-    private val View_Myprofile = 0
-    private val View_Friend = 1
+    companion object {
+        const val View_Myprofile = 0
+        const val View_Friend = 1
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
@@ -34,10 +38,10 @@ class MainAdapter(requireContext: Context) :
         val item = profileList[position]
         when (holder) {
             is MyProfileViewHolder -> {
-                holder.onBind(item as UserProfile.My )
+                holder.onBind(item as RealUserProfile.My )
             }
             is FriendViewHolder -> {
-                holder.onBind(item as UserProfile.User)
+                holder.onBind(item as RealUserProfile.RealUser)
             }
         }
     }
@@ -47,8 +51,8 @@ class MainAdapter(requireContext: Context) :
     }
 
     override fun getItemViewType(position: Int): Int = when(profileList[position]){
-        is UserProfile.My -> View_Myprofile
-        is UserProfile.User -> View_Friend
+        is RealUserProfile.My -> View_Myprofile
+        is RealUserProfile.RealUser -> View_Friend
     }
 }
 

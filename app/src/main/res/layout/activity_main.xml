@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:paddingHorizontal="60dp"
     android:paddingVertical="60dp"
-    tools:context=".MainActivity">
+    tools:context=".presentation.main.MainActivity">
 
     <ImageView
         android:id="@+id/image"
