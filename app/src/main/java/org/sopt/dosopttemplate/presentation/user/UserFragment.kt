@@ -42,9 +42,10 @@ class UserFragment : Fragment() {
         UserViewModel.getUserFromServer(2)
     }
 
+    private lateinit var userAdapter: UserAdapter
     private fun connectAdapter() {
-        val adapter = UserAdapter()
-        binding.rvUser.adapter = adapter
+        userAdapter = UserAdapter()
+        binding.rvUser.adapter = userAdapter
     }
 
     private fun observeUserState() {
@@ -64,8 +65,7 @@ class UserFragment : Fragment() {
     }
 
     private fun getUser(userList: List<UserEntity>) {
-        val adapter = binding.rvUser.adapter as? UserAdapter
-        adapter?.setUserList(userList)
+        userAdapter.setUserList(userList)
     }
 
     override fun onDestroyView() {

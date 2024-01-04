@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import org.sopt.dosopttemplate.R
 import org.sopt.dosopttemplate.databinding.ActivitySignupBinding
 import org.sopt.dosopttemplate.presentation.login.LoginActivity
 
@@ -20,32 +21,41 @@ class SignUpActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         binding.signupViewModel = signupViewModel
 
-        clicksignbtn()
+        initSignUpBtnListener()
         observeSignupResult()
-        //observeSignupValid()
     }
 
-    private fun clicksignbtn() {
+    private var signUpId: String = ""
+    private var signUpPassword: String = ""
+    private var signUpMajor: String = ""
+    private var signUpName: String = ""
+    public fun initSignUpBtnListener() {
         binding.signupButton.setOnClickListener {
-            val id = binding.editTextId.text.toString()
-            val password = binding.editTextPassword.text.toString()
-            val major = binding.editTextMajor.text.toString()
-            val name = binding.editTextName.text.toString()
+            val signUpId = binding.editTextId.text.toString()
+            val signUpPassword = binding.editTextPassword.text.toString()
+            val signUpMajor = binding.editTextMajor.text.toString()
+            val signUpName = binding.editTextName.text.toString()
 
-            signupViewModel.signup(id, password, major, name)
+            signupViewModel.signup(signUpId, signUpPassword, signUpMajor, signUpName)
+
         }
     }
 
     private fun observeSignupResult() {
-        signupViewModel.signupSuccess.observe(this) {
-            if (it) {
-                val loginIntent = Intent(this, LoginActivity::class.java)
-                startActivity(loginIntent)
+        signupViewModel.signupSuccess.observe(this) { isSuccess ->
+            if (isSuccess) {
+                Intent(this, LoginActivity::class.java).apply {
+                    putExtra("ID", signUpId)
+                    putExtra("PASSWORD", signUpPassword)
+                    putExtra("MAJOR", signUpMajor)
+                    putExtra("NAME", signUpName)
+                    startActivity(this)
+                }
                 finish()
             } else {
-                Toast.makeText(this@SignUpActivity, "회원가입 실패요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@SignUpActivity, getString(R.string.signup_failed), Toast.LENGTH_SHORT).show()
+
             }
         }
     }
 }
-

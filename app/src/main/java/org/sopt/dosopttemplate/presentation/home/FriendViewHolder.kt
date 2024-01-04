@@ -7,13 +7,14 @@ import org.sopt.dosopttemplate.databinding.ItemFriendBinding
 class FriendViewHolder(private val binding: ItemFriendBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun onBind(userRealUserProfileData: RealUserProfile.RealUser) {
+    fun onBind(RealUserData: RealUserProfile.RealUser) {
         with(binding) {
             Glide.with(ivProfile)
-                .load(userRealUserProfileData.profileImage)
+                .load(RealUserData.profileImage)
                 .into(ivProfile)
-            tvName.text = userRealUserProfileData.name
-            tvSelfMessage.text = userRealUserProfileData.message
+            tvName.text = RealUserData.name
+            tvSelfMessage.text = RealUserData.message
         }
     }
     }
+

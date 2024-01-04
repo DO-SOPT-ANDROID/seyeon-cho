@@ -20,29 +20,15 @@ class SignupViewModel : ViewModel() {
     val major = MutableLiveData("")
     val name = MutableLiveData("")
 
-//    val isIdValid = id.map { ID_PATTERN.matcher(it).matches() }
-//    val isPwValid = password.map { PW_PATTERN.matcher(it).matches() }
-//
-//    fun checkBtn() {
-//        _isSignupBtn.value = isIdValid.value == true && isPwValid.value == true
-//    }
-
     fun signup(id: String, password: String, major: String, name: String) {
-        ServicePool.authService.signup(RequestSignupDto(id, password, major, name))
+        ServicePool.authService.postSignUp(RequestSignupDto(id, password, major, name))
             .enqueue(object : Callback<Unit> {
                 override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
                     _signupSuccess.value = response.isSuccessful
                 }
 
                 override fun onFailure(call: Call<Unit>, t: Throwable) {
-                    // 에러 로직
                 }
             })
     }
-//    companion object {
-//        private const val ID_REGEX = "^(?=.*[a-zA-Z])(?=.*\\d)[a-zA-Z\\d]{6,10}\$"
-//        private const val PW_REGEX = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[^\\w\\s])[a-zA-Z\\d\\S]{6,12}\$"
-//        val ID_PATTERN: Pattern = Pattern.compile(ID_REGEX)
-//        val PW_PATTERN: Pattern = Pattern.compile(PW_REGEX)
-//    }
 }

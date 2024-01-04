@@ -15,8 +15,10 @@ class MainAdapter(requireContext: Context) :
 
     lateinit var profileList: MutableList<RealUserProfile>
 
-    private val View_Myprofile = 0
-    private val View_Friend = 1
+    companion object {
+        const val View_Myprofile = 0
+        const val View_Friend = 1
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {

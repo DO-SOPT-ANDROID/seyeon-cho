@@ -18,7 +18,7 @@ class LoginViewModel : ViewModel() {
     fun login(id: String, password: String) {
         viewModelScope.launch {
             try {
-                val response = authService.login(RequestLoginDto(id, password)).execute()
+                val response = authService.postLogin(RequestLoginDto(id, password)).execute()
 
                 if (response.isSuccessful) {
                     val responseBody = response.body()
@@ -31,7 +31,7 @@ class LoginViewModel : ViewModel() {
                     _uiState.value = UiState.Error
                 }
             } catch (e: Exception) {
-                Log.d("LoginViewModel", "실패")
+                Log.d("LoginViewModel","실패")
                 _uiState.value = UiState.Error
             }
         }

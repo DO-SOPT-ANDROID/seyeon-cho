@@ -35,18 +35,6 @@ class HomeFragment : Fragment() {
         _binding = null
         super.onDestroyView()
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 

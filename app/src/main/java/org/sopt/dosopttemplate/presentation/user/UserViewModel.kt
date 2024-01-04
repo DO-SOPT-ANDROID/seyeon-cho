@@ -27,7 +27,7 @@ class UserViewModel @Inject constructor(
                         UserEntity(
                             avatar = userEntity.avatar,
                             email = userEntity.email,
-                            first_name = userEntity.first_name,
+                            firstName = userEntity.firstName,
                         )
                     }
                     _userState.value = UiState.Success(User)

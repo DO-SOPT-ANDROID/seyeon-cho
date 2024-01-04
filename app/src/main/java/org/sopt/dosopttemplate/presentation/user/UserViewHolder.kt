@@ -11,7 +11,7 @@ class UserViewHolder(
 ): RecyclerView.ViewHolder(binding.root) {
 
     fun onBind(item: UserEntity) {
-        binding.tvUserName.text = item.first_name
+        binding.tvUserName.text = item.firstName
         binding.tvUserEmail.text = item.email
         Glide.with(binding.root.context)
             .load(item.avatar)

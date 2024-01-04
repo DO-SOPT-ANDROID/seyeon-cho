@@ -7,13 +7,13 @@ import org.sopt.dosopttemplate.domain.entity.UserEntity
 @Serializable
 data class ResponseUserDto(
     @SerialName("page")
-    val page: Int = 0,
+    val page: Int,
     @SerialName("per_page")
-    val per_page: Int = 0,
+    val perPage: Int,
     @SerialName("total")
-    val total: Int = 0,
+    val total: Int,
     @SerialName("total_pages")
-    val total_pages: Int = 0,
+    val totalPages: Int,
     @SerialName("data")
     val data: List<ResponseUserData>,
     @SerialName("support")
@@ -22,13 +22,13 @@ data class ResponseUserDto(
     @Serializable
     data class ResponseUserData(
         @SerialName("id")
-        val id: Int = 0,
+        val id: Int,
         @SerialName("email")
         val email: String = "",
         @SerialName("first_name")
-        val first_name: String = "",
+        val firstName: String = "",
         @SerialName("last_name")
-        val last_name: String = "",
+        val lastName: String = "",
         @SerialName("avatar")
         val avatar: String = ""
     )
@@ -41,7 +41,7 @@ data class ResponseUserDto(
     )
     fun toUserEntity(): List<UserEntity> = data.map {
         UserEntity(
-            first_name = it.first_name,
+            firstName = it.firstName,
             email = it.email,
             avatar = it.avatar
         )

@@ -17,7 +17,7 @@
     tools:context=".presentation.signup.SignUpActivity">
 
     <TextView
-        android:id="@+id/welcome"
+        android:id="@+id/tv_signup_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/signup_title"
@@ -28,14 +28,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/signTextId"
+        android:id="@+id/tv_signup_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:text="@string/id_title"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/welcome" />
+        app:layout_constraintTop_toTopOf="@id/tv_signup_title" />
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -44,8 +44,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@id/signTextId"
-        app:layout_constraintTop_toBottomOf="@id/signTextId">
+        app:layout_constraintStart_toStartOf="@id/tv_signup_id"
+        app:layout_constraintTop_toBottomOf="@id/tv_signup_id">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextId"
@@ -56,14 +56,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/signTextPassword"
+        android:id="@+id/tv_signup_pw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="@string/pw_title"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/signTextId" />
+        app:layout_constraintTop_toTopOf="@id/tv_signup_id" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_signup_pw"
@@ -71,8 +71,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@id/signTextPassword"
-        app:layout_constraintTop_toBottomOf="@id/signTextPassword">
+        app:layout_constraintStart_toStartOf="@id/tv_signup_pw"
+        app:layout_constraintTop_toBottomOf="@id/tv_signup_pw">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextPassword"
@@ -83,22 +83,22 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/signTextMajor"
+        android:id="@+id/tv_signup_major"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="@string/major_title"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/signTextPassword" />
+        app:layout_constraintTop_toTopOf="@id/tv_signup_pw" />
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_signup_major"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@id/signTextMajor"
-        app:layout_constraintTop_toBottomOf="@id/signTextMajor">
+        app:layout_constraintStart_toStartOf="@id/tv_signup_major"
+        app:layout_constraintTop_toBottomOf="@id/tv_signup_major">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextMajor"
@@ -109,22 +109,22 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/signTextName"
+        android:id="@+id/tv_signup_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="@string/nickname_title"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/signTextMajor" />
+        app:layout_constraintTop_toTopOf="@id/tv_signup_major" />
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_signup_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@id/signTextName"
-        app:layout_constraintTop_toBottomOf="@id/signTextName">
+        app:layout_constraintStart_toStartOf="@id/tv_signup_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_signup_name">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextName"
@@ -135,7 +135,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/signupButton"
+        android:id="@+id/btn_signup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/btn_signup"
